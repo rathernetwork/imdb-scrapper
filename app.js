@@ -4,7 +4,7 @@ const config = require('./config/config');
 const databaseClient = require('./lib/SQLClient')(config.sqlDatabase);
 
 const { getLastIndex } = require('./src/getFromDB');
-const { addImdbRating } = require('./src/addImdbRating');
+const { addImdbRating } = require('./src/imdbRating');
 
 const getDatabaseClient = () => databaseClient;
 
