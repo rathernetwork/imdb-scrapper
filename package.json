@@ -1,0 +1,27 @@
+{
+  "name": "imdb-ratings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env ENV=DEVELOP node app.js BEGINNING",
+    "start:prod": "cross-env ENV=PRODUCTION node app.js BEGINNING",
+    "resume:dev": "cross-env ENV=DEVELOP node app.js",
+    "resume:prod": "cross-env ENV=PRODUCTION node app.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "mssql": "^6.2.3",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
