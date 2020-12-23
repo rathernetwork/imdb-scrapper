@@ -69,7 +69,7 @@ const addImdbRating = async (limit, offset, databaseClient) => {
         };
 
         if (!data.imdbId) {
-            if (data.TypeId === appConstants.ITEM_TYPE_SERIE) {
+            if (data.itemType === appConstants.ITEM_TYPE_SERIE) {
                 console.log(`Fetching imdb id for itemId ${data.itemId}`);
                 data.imdbId = await getImdbId(data, databaseClient);
             } else {
