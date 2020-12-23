@@ -23,10 +23,14 @@ const getImdbId = ({ itemId, itemType, tmdbId }, databaseClient) => new Promise(
     let imdbId;
     request(url, { json: true })
         .then((r) => {
-            imdbId = r && r.imdb_id;
-            storeImdbId({ itemId, itemType, imdbId }, databaseClient)
-                .catch((e) => { console.log(e); });
-            resolve(imdbId);
+            if (r && r.imdb_id && r.imdb_id !== 'null') {
+                imdbId = r && r.imdb_id;
+                storeImdbId({ itemId, itemType, imdbId }, databaseClient)
+                    .catch((e) => { console.log(e); });
+                resolve(imdbId);
+            } else {
+                resolve();
+            }
         })
         .catch((err) => { reject(err); });
 });
